@@ -16,21 +16,15 @@ public class Driver {
     public static WebDriver getDriver (){
         if (driver==null){
             String browser = ConfigurationReader.getProperty("browser");
-            switch (browser){
+            switch (browser.toLowerCase()){
                 case "chrome":
-                case "Chrome":
-                case "CHROME":
                 WebDriverManager.chromedriver().setup();
-                driver=new ChromeDriver();
-
+                driver = new ChromeDriver();
                 break;
 
                 case "firefox":
-                case "Firefox":
-                case "FIREFOX":
                 WebDriverManager.firefoxdriver().setup();
-                driver=new FirefoxDriver();
-
+                driver = new FirefoxDriver();
                 break;
 
                 default:
@@ -46,6 +40,7 @@ public class Driver {
 
     public static void closeDriver (){
         if (driver!= null){
+            driver.close();
             driver.quit();
             driver = null;
         }
