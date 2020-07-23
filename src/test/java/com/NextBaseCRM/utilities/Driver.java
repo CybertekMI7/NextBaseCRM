@@ -1,4 +1,4 @@
-package com.briteERP.utilities;
+package com.NextBaseCRM.utilities;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;

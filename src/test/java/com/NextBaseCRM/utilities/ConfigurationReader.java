@@ -1,9 +1,6 @@
-package com.briteERP.utilities;
-
-import jdk.internal.org.objectweb.asm.tree.TryCatchBlockNode;
+package com.NextBaseCRM.utilities;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 public class ConfigurationReader {
