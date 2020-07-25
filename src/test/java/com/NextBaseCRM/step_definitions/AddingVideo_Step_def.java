@@ -24,7 +24,8 @@ public class AddingVideo_Step_def {
     @Then("User enters video URL and waits until video is loaded and clicks Save")
     public void userEntersVideoURLAndWaitsUntilVideoIsLoadedAndClicksSave() {
         wait.until(ExpectedConditions.visibilityOf(videoPage.VideoSourceInput));
-        videoPage.VideoSourceInput.sendKeys("https://youtu.be/BJ2es2vAnDQ");
+        String URl ="https://youtu.be/BJ2es2vAnDQ";
+        videoPage.VideoSourceInput.sendKeys(URl);
         wait.until(ExpectedConditions.visibilityOf(videoPage.VideoTitle));
         videoPage.SaveButton.click();
 

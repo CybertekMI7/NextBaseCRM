@@ -42,10 +42,26 @@ Feature:  As a user, I should be able to send messages by clicking on Message ta
     #User should be able to insert videos by clicking on the video icon and inserting video URL
   @P7-99
 
-  @upload
+
   Scenario: Ability of user to insert videos under Messages
     Given User is on homepage and MESSAGE is displayed under ACTIVITY STREAM
     Then User clicks on Messages tab under Activity Stream Module
     Then User locates Video icon and clicks
     Then User enters video URL and waits until video is loaded and clicks Save
     Then User sees video is displayed on Message Console
+
+
+    #User should be able to create a quote by clicking on Comma Icon
+  @P7-101
+
+    @upload
+  Scenario Outline: User should be able to create a quote
+
+    When User clicks on COMMA icon
+    Then User sees QUOTE INPUT inside of Message Console
+    Then User enters a "<quote>" and presses SEND
+    Then User sees entered "<quote>" displayed on Activity Stream board
+    Examples:
+
+      | quote            |
+      | This is my quote |
