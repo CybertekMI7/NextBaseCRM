@@ -17,7 +17,7 @@ Feature:  As a user, I should be able to send messages by clicking on Message ta
     # User should be able to add users from selecting contact from E-mail user, Employees and Departments and Recent contact lists.
 	#
   @P7-95
-    @upload
+
   Scenario: User ability to add users from contact
 
     Then User locates To box, clears it and clicks on Add persons, groups and department
@@ -25,3 +25,16 @@ Feature:  As a user, I should be able to send messages by clicking on Message ta
     Then User clicks on  Employees and Departments  module and chooses first contact
     Then User clicks on Email users
     Then User sees added contacts on  To  box
+
+    #User should be able to  attach link by clicking  on link icon
+  @P7-97
+    @upload
+  Scenario Outline: User's ability to attach link
+
+    Then User locates and clicks on LINK icon
+    Then User enters "<LINK TEXT>" and "<LINK URL>" and clicks save
+    Then User sees LINK TEXT "<LINK TEXT>" LIGHT BLUE in Message Console
+
+    Examples:
+      | LINK TEXT  | LINK URL                |
+      | Google.com | https://www.google.com/ |
