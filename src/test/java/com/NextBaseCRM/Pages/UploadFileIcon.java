@@ -20,5 +20,14 @@ public class UploadFileIcon {
     @FindBy(xpath = "(//td[@class='diskuf-selector wd-fa-add-file-light-cell wd-fa-add-file-from-main'])[1]")
     public WebElement UploadFilesAndImages;
 
+    @FindBy(xpath = "(//*[contains(text(),'Select document from Bitrix24')])[1]")
+    public WebElement selectDocFromB24_text;
+
+    @FindBy(xpath = "(//*[contains(text(),'Download from external drive')])[2]")
+    public WebElement DwnldFromExternalDrive_text;
+
+    @FindBy(xpath = "(//*[@class ='wd-fa-add-file-light-title'])[2]")
+    public WebElement CreateUsingGoogleDocs_text;
+
 
 }
