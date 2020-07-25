@@ -28,7 +28,7 @@ Feature:  As a user, I should be able to send messages by clicking on Message ta
 
     #User should be able to  attach link by clicking  on link icon
   @P7-97
-    @upload
+
   Scenario Outline: User's ability to attach link
 
     Then User locates and clicks on LINK icon
@@ -38,3 +38,14 @@ Feature:  As a user, I should be able to send messages by clicking on Message ta
     Examples:
       | LINK TEXT  | LINK URL                |
       | Google.com | https://www.google.com/ |
+
+    #User should be able to insert videos by clicking on the video icon and inserting video URL
+  @P7-99
+
+  @upload
+  Scenario: Ability of user to insert videos under Messages
+    Given User is on homepage and MESSAGE is displayed under ACTIVITY STREAM
+    Then User clicks on Messages tab under Activity Stream Module
+    Then User locates Video icon and clicks
+    Then User enters video URL and waits until video is loaded and clicks Save
+    Then User sees video is displayed on Message Console
