@@ -21,6 +21,15 @@ public class AddingVideo_Step_def {
 
     }
 
+    @Then("User enters video URL and waits until video is loaded and clicks Save")
+    public void userEntersVideoURLAndWaitsUntilVideoIsLoadedAndClicksSave() {
+        wait.until(ExpectedConditions.visibilityOf(videoPage.VideoSourceInput));
+        videoPage.VideoSourceInput.sendKeys("https://youtu.be/BJ2es2vAnDQ");
+        wait.until(ExpectedConditions.visibilityOf(videoPage.VideoTitle));
+        videoPage.SaveButton.click();
+
+    }
+
 
     @Then("User sees video is displayed on Message Console")
     public void user_sees_video_is_displayed_on_message_console() {
@@ -32,12 +41,5 @@ public class AddingVideo_Step_def {
     }
 
 
-    @Then("User enters video URL and waits until video is loaded and clicks Save")
-    public void userEntersVideoURLAndWaitsUntilVideoIsLoadedAndClicksSave() {
-        wait.until(ExpectedConditions.visibilityOf(videoPage.VideoSourceInput));
-        videoPage.VideoSourceInput.sendKeys("https://youtu.be/BJ2es2vAnDQ");
-        wait.until(ExpectedConditions.visibilityOf(videoPage.VideoTitle));
-        videoPage.SaveButton.click();
 
-    }
 }
