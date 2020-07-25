@@ -10,9 +10,3 @@ Feature:  As a user, I should be able to send messages by clicking on Message ta
     Then User clicks on Messages tab under Activity Stream Module
     When User clicks on UPLOAD FILES icon
     Then User sees UPLOAD OPTIONS at the bottom of MESSAGE INPUT FIELD
-    Then User clicks on UPLOAD FILES AND IMAGES user given options to choose from his computer
-    Then User chooses desired file we see chosen file under ATTACHED FILES AND IMAGES TEXT
-    When User drags and drops desired file in to the UPLOAD FILES AND IMAGES
-    Then User sees dragged and dropped file under UPLOAD FILES AND IMAGES
-    When User clicks SEND button
-    Then A new message is displayed on board under ACTIVITY STREAM
