@@ -69,9 +69,18 @@ Feature:  As a user, I should be able to send messages by clicking on Message ta
 
     #User should be able to add mention  by clicking ADD mention icon and select contacts from dropdown menu
   @P7-102
-  @upload
+
   Scenario: User should be able to add mention
 
     Then User locates the Add mention icon and clicks
     Then User chooses a contact from dropdown menu
     Then User sees selected contact displayed on Page
+
+    #User should be able to click on Visual Editor  and see editor text bar displays on top of the message box.
+  @P7-103
+
+  @upload
+  Scenario: User should be able to click on VISUAL EDITOR
+
+    When User clicks on Visual Editor Icon
+    Then User sees EDITOR TEXT bar on top of the messages
