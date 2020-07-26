@@ -54,7 +54,7 @@ Feature:  As a user, I should be able to send messages by clicking on Message ta
     #User should be able to create a quote by clicking on Comma Icon
   @P7-101
 
-    @upload
+
   Scenario Outline: User should be able to create a quote
 
     When User clicks on COMMA icon
@@ -65,3 +65,13 @@ Feature:  As a user, I should be able to send messages by clicking on Message ta
 
       | quote            |
       | This is my quote |
+
+
+    #User should be able to add mention  by clicking ADD mention icon and select contacts from dropdown menu
+  @P7-102
+  @upload
+  Scenario: User should be able to add mention
+
+    Then User locates the Add mention icon and clicks
+    Then User chooses a contact from dropdown menu
+    Then User sees selected contact displayed on Page
