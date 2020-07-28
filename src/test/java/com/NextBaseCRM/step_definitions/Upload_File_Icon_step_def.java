@@ -47,12 +47,16 @@ public class Upload_File_Icon_step_def {
     }
 
     @Then("User sees UPLOAD OPTIONS at the bottom of MESSAGE INPUT FIELD")
-    public void user_sees_upload_options_at_the_bottom_of_message_input_field() throws AWTException, InterruptedException {
+    public void user_sees_upload_options_at_the_bottom_of_message_input_field()  {
+
         wait.until(ExpectedConditions.visibilityOf(upload_file_icon.UploadFilesAndImages));
+       // wait.until(ExpectedConditions.visibilityOf(upload_file_icon.CreateUsingGoogleDocs_text));
         Assert.assertTrue(upload_file_icon.UploadFilesAndImages.isDisplayed());
         Assert.assertTrue(upload_file_icon.CreateUsingGoogleDocs_text.isDisplayed());
         Assert.assertTrue(upload_file_icon.DwnldFromExternalDrive_text.isDisplayed());
         Assert.assertTrue(upload_file_icon.selectDocFromB24_text.isDisplayed());
+
+
 
     }
 

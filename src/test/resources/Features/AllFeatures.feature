@@ -1,3 +1,5 @@
+
+@upload
 Feature:  As a user, I should be able to send messages by clicking on Message tab under Active Stream.
 
   Background:
@@ -8,6 +10,8 @@ Feature:  As a user, I should be able to send messages by clicking on Message ta
  # User should be able to click on upload files icon to upload files and pictures from local disks.
 	#
   @P7-81
+
+
   Scenario: Upload File Icon functionality under New Message
     When User clicks on UPLOAD FILES icon
     Then User sees UPLOAD OPTIONS at the bottom of MESSAGE INPUT FIELD
@@ -82,7 +86,7 @@ Feature:  As a user, I should be able to send messages by clicking on Message ta
 
     #User should be able to click on Topic Icon  and see Topic Message Text box displays on top of the message box
   @P7-104
-  @upload
+
   Scenario: User should be able to click on Topic Icon
     When User locates Topic Icon and clicks it
     Then User sees Topic Text box on top of messages

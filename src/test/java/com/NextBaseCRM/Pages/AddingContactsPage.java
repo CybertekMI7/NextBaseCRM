@@ -32,10 +32,10 @@ public class AddingContactsPage {
     @FindBy(xpath = "//span[@class='popup-window-close-icon']")
     public WebElement CloseWindowIcon;
 
-    @FindBy(xpath = "//span[@data-id='U495']")
+    @FindBy(xpath = "(//span[@class='feed-add-post-destination-text'])[1]")
     public WebElement AddedContact1;
 
-    @FindBy(xpath = "//span[@data-id='U739']")
+    @FindBy(xpath = "(//span[@class='feed-add-post-destination-text'])[2]")
     public WebElement AddedContact2;
 
 }

@@ -43,10 +43,12 @@ public class AddingQuote_Step_def {
         quotePages.QuoteInput.sendKeys(quote);
         Driver.getDriver().switchTo().defaultContent();
         actions.moveToElement(quotePages.SendButton).click().perform();
+        Driver.getDriver().switchTo().defaultContent();
     }
 
     @Then("User sees entered {string} displayed on Activity Stream board")
     public void userSeesEnteredDisplayedOnActivityStreamBoard(String quote) {
+
 
         WebElement ExpectedQuote =Driver.getDriver().findElement(By.xpath("//*[contains(text(),'"+quote+"')]"));
         wait.until(ExpectedConditions.visibilityOf(ExpectedQuote));

@@ -2,7 +2,9 @@ package com.NextBaseCRM.step_definitions;
 
 import com.NextBaseCRM.Pages.LoginPage;
 import com.NextBaseCRM.utilities.Driver;
+import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import org.junit.Ignore;
 
 public class Hooks {
 
@@ -16,4 +18,8 @@ public class Hooks {
         loginPage.login();
     }
 
+    @After
+public void teardown(){
+        Driver.closeDriver();
+}
 }

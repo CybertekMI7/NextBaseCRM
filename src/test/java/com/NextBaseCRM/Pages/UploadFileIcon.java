@@ -23,7 +23,7 @@ public class UploadFileIcon {
     @FindBy(xpath = "(//*[contains(text(),'Select document from Bitrix24')])[1]")
     public WebElement selectDocFromB24_text;
 
-    @FindBy(xpath = "(//*[contains(text(),'Download from external drive')])[2]")
+    @FindBy(xpath = "(//*[contains(text(),'Download from external drive')])")
     public WebElement DwnldFromExternalDrive_text;
 
     @FindBy(xpath = "(//*[@class ='wd-fa-add-file-light-title'])[2]")
