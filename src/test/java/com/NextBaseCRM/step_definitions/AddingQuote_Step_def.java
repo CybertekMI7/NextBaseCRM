@@ -1,6 +1,4 @@
 package com.NextBaseCRM.step_definitions;
-
-import com.NextBaseCRM.Pages.AddingVideoPage;
 import com.NextBaseCRM.Pages.QuotePages;
 import com.NextBaseCRM.utilities.Driver;
 import io.cucumber.java.en.Then;
@@ -21,8 +19,7 @@ public class AddingQuote_Step_def {
     @When("User clicks on COMMA icon")
     public void user_clicks_on_comma_icon() {
 
-        wait.until(ExpectedConditions.visibilityOf(quotePages.QuoteIcon));
-        quotePages.QuoteIcon.click();
+        quotePages.ClickingOnCommaIcon();
     }
 
 
@@ -30,10 +27,8 @@ public class AddingQuote_Step_def {
     @Then("User sees QUOTE INPUT inside of Message Console")
     public void user_sees_quote_input_inside_of_message_console() {
 
-        wait.until(ExpectedConditions.visibilityOf(quotePages.iFrame));
-        Driver.getDriver().switchTo().frame(quotePages.iFrame);
-        wait.until(ExpectedConditions.visibilityOf(quotePages.QuoteInput));
-        Assert.assertTrue(quotePages.QuoteInput.isDisplayed());
+        quotePages.visibilityOfQuoteInputBox();
+
 
     }
 

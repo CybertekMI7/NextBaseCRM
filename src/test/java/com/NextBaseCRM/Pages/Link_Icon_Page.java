@@ -4,16 +4,16 @@ import com.NextBaseCRM.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class Link_Icon_Page {
+public class Link_Icon_Page extends BasePage {
 
     public Link_Icon_Page(){
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
     @FindBy(xpath = "//span[@title='Link']")
-    public WebElement Link_Icon;
+    private WebElement Link_Icon;
 
     @FindBy(xpath = "//*[contains(@id,'linkidPostFormLHE_blogPostForm-text')]")
     public WebElement LinkTextInput;
@@ -23,6 +23,14 @@ public class Link_Icon_Page {
 
     @FindBy(className = "bx-editor-iframe")
     public WebElement iFrame;
+
+    public void ClickingOnLinkIcon(){
+        wait.until(ExpectedConditions.visibilityOf(Link_Icon));
+        Link_Icon.click();
+    }
+
+
+
 
 
 }

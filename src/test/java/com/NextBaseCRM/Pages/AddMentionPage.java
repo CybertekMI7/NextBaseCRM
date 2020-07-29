@@ -1,27 +1,45 @@
 package com.NextBaseCRM.Pages;
 
 import com.NextBaseCRM.utilities.Driver;
+import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 
-public class AddMentionPage {
+public class AddMentionPage extends BasePage {
 
     public AddMentionPage(){
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
     @FindBy(xpath = "//*[@id='bx-b-mention-blogPostForm']")
-    public WebElement AddMentionIcon;
+    private WebElement AddMentionIcon;
 
     @FindBy(xpath = "(//*[@class='bx-finder-box-item-t7-name'])[1]")
-    public WebElement MentionContact;
+    private WebElement MentionContact;
 
     @FindBy(xpath="//*[@class='bxhtmled-metion']")
-    public WebElement DisplayedText;
+    private WebElement DisplayedText;
 
     @FindBy(className = "bx-editor-iframe")
-    public WebElement iFrame;
+    private WebElement iFrame;
+
+    public void AddMentionIconClick(){
+        wait.until(ExpectedConditions.visibilityOf(AddMentionIcon));
+        AddMentionIcon.click();
+    }
+
+    public void ChoosingContacts(){
+        wait.until(ExpectedConditions.visibilityOf(MentionContact));
+        MentionContact.click();
+    }
+
+    public void VisibilityOfMentionedContacts(){
+        Driver.getDriver().switchTo().frame(iFrame);
+        wait.until(ExpectedConditions.visibilityOf(DisplayedText));
+        Assert.assertTrue(DisplayedText.isDisplayed());
+    }
 
 }

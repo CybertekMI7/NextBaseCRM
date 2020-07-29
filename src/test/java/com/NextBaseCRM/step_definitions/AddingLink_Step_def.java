@@ -10,15 +10,15 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class AddingLink_Step_def {
+public class AddingLink_Step_def  {
 
+    WebDriverWait wait = new WebDriverWait(Driver.getDriver(),10);
     Link_Icon_Page linkIconPage = new Link_Icon_Page();
-    WebDriverWait wait = new WebDriverWait(Driver.getDriver(),5);
+
     @Then("User locates and clicks on LINK icon")
     public void user_locates_and_clicks_on_link_icon() {
 
-        wait.until(ExpectedConditions.visibilityOf(linkIconPage.Link_Icon));
-        linkIconPage.Link_Icon.click();
+       linkIconPage.ClickingOnLinkIcon();
 
     }
 
@@ -30,8 +30,6 @@ public class AddingLink_Step_def {
         linkIconPage.LinkTextInput.sendKeys(LinkText);
         linkIconPage.LunkURlInput.sendKeys(LinkURL+ Keys.ENTER);
     }
-
-
 
 
     @Then("User sees LINK TEXT {string} LIGHT BLUE in Message Console")
