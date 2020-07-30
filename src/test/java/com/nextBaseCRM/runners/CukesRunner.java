@@ -1,4 +1,4 @@
-package com.NextBaseCRM.runners;
+package com.nextBaseCRM.runners;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
@@ -7,9 +7,10 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         plugin = "html:target/cucumber-report.html",
         features = "src/test/resources/features",
-        glue = "com/NextBaseCRM/step_definitions",
+        glue = "com/nextBaseCRM/step_definitions",
         dryRun = false,
-        tags =""
+        tags ="@wip"
+
 )
 
 public class CukesRunner {

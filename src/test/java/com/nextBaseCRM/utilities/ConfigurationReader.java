@@ -1,4 +1,4 @@
-package com.NextBaseCRM.utilities;
+package com.nextBaseCRM.utilities;
 
 import java.io.FileInputStream;
 import java.io.IOException;

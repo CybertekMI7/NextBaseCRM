@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Test suit">
+    <!--    this is a comment -->
+    <test name="testng">
+        <classes>
+            <!--            class to include into set suite-->
+            <class name="com.nextBaseCRM.pages.Like_button_page"/>
+            <class name="com.nextBaseCRM.runners.CukesRunner"/>
+            <class name="com.nextBaseCRM.pages.ViewingProfiles_Page_P"/>
+            <class name="com.nextBaseCRM.step_definitions.Hooks"/>
+
+        </classes>
+    </test>
+</suite>
