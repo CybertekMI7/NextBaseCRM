@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com/NextBaseCRM/step_definitions",
         dryRun = false,
-        tags =""
+        tags ="@upload"
 )
 
 public class CukesRunner {
