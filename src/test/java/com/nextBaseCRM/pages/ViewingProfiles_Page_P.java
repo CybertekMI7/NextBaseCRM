@@ -16,7 +16,6 @@ public class ViewingProfiles_Page_P extends Base_page {
 
     @FindBy(xpath = "//span[@id='pagetitle-star']")
     private WebElement reviewerProfilePage;
-
     public void homePageConfirmation() {
         wait.until(ExpectedConditions.visibilityOf(activityStream_Text));
         Assert.assertTrue(activityStream_Text.isDisplayed());
