@@ -6,10 +6,12 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         plugin = "html:target/cucumber-report.html",
-        features = "src/test/resources/features",
+        features = "src/test/resources/Features",
         glue = "com/NextBaseCRM/step_definitions",
         dryRun = false,
-        tags ="@upload"
+
+        tags =""
+
 )
 
 public class CukesRunner {
