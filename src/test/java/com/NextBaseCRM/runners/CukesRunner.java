@@ -9,7 +9,9 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/Features",
         glue = "com/NextBaseCRM/step_definitions",
         dryRun = false,
-        tags ="@helpDesk"
+
+        tags =""
+
 )
 
 public class CukesRunner {
