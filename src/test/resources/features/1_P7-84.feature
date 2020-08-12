@@ -44,7 +44,7 @@ Feature:
 
     #User should be able to click on upload files icon to upload files and pictures from local disks, upload from
     # external drive, select documents from bixtrix24, and create files to upload.
-  @P7-89 @P7-82 @wip
+  @P7-89 @P7-82
   Scenario Outline: task tab - new task - upload files
     Given user logged in as "<access type>"
     When user is in Tasks submodule of Activity Stream
