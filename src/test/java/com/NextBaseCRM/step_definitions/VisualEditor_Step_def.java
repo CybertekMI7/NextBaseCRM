@@ -11,6 +11,7 @@ public class VisualEditor_Step_def {
     public void user_clicks_on_visual_editor_icon() {
 
         visualEditorPage.clickingOnVisualEditor();
+        visualEditorPage.clickingOnVisualEditor();
     }
 
 

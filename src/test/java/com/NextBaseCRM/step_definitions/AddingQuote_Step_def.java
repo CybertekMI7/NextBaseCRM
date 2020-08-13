@@ -1,6 +1,7 @@
 package com.NextBaseCRM.step_definitions;
 import com.NextBaseCRM.Pages.QuotePages;
 import com.NextBaseCRM.utilities.Driver;
+import com.github.javafaker.Faker;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -15,6 +16,7 @@ public class AddingQuote_Step_def {
     QuotePages quotePages = new QuotePages();
     WebDriverWait wait= new WebDriverWait(Driver.getDriver(), 10);
     Actions actions = new Actions(Driver.getDriver());
+
 
     @When("User clicks on COMMA icon")
     public void user_clicks_on_comma_icon() {
@@ -32,24 +34,10 @@ public class AddingQuote_Step_def {
 
     }
 
-    @Then("User enters a {string} and presses SEND")
-    public void user_enters_a_and_presses_send(String quote) {
+    @Then("User enters a quote and presses SEND and sees the quote displayed")
+    public void userEntersAQuoteAndPressesSENDAndSeesTheQuoteDisplayed() {
 
-        quotePages.QuoteInput.sendKeys(quote);
-        Driver.getDriver().switchTo().defaultContent();
-        actions.moveToElement(quotePages.SendButton).click().perform();
-        Driver.getDriver().switchTo().defaultContent();
+       quotePages.enteringSendingVisibilityQuote();
     }
-
-    @Then("User sees entered {string} displayed on Activity Stream board")
-    public void userSeesEnteredDisplayedOnActivityStreamBoard(String quote) {
-
-
-        WebElement ExpectedQuote =Driver.getDriver().findElement(By.xpath("//*[contains(text(),'"+quote+"')]"));
-        wait.until(ExpectedConditions.visibilityOf(ExpectedQuote));
-        Assert.assertTrue(ExpectedQuote.isDisplayed());
-    }
-
-
-    }
+}
 

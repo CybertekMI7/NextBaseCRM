@@ -60,8 +60,8 @@ Feature:  As a user, I should be able to send messages by clicking on Message ta
   Scenario Outline: User should be able to create a quote
     When User clicks on COMMA icon
     Then User sees QUOTE INPUT inside of Message Console
-    Then User enters a "<quote>" and presses SEND
-    Then User sees entered "<quote>" displayed on Activity Stream board
+    Then User enters a quote and presses SEND and sees the quote displayed
+
     Examples:
 
       | quote            |
