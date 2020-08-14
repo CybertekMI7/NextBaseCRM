@@ -1,5 +1,5 @@
 
-@upload
+
 Feature:  As a user, I should be able to send messages by clicking on Message tab under Active Stream.
 
   Background:
@@ -47,6 +47,7 @@ Feature:  As a user, I should be able to send messages by clicking on Message ta
   @P7-99
 
 
+  @upload
   Scenario: Ability of user to insert videos under Messages
     Then User locates Video icon and clicks
     Then User enters video URL and waits until video is loaded and clicks Save
