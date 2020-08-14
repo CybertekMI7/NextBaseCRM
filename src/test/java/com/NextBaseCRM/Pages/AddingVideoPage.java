@@ -47,6 +47,12 @@ public class AddingVideoPage extends BasePage {
         //JavascriptExecutor jse =((JavascriptExecutor)Driver.getDriver());
        // jse.executeScript("https://youtu.be/BJ2es2vAnDQ",VideoSourceInput);
 
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         actions.sendKeys(VideoSourceInput,URl).build().perform();
        // wait.until(ExpectedConditions.visibilityOf(VideoTitle));
         try {

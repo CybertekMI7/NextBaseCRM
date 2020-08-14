@@ -12,7 +12,7 @@ Feature:  As a user, I should be able to send messages by clicking on Message ta
   @P7-81
 
 
-
+  @upload
   Scenario: Upload File Icon functionality under New Message
     When User clicks on UPLOAD FILES icon
     Then User sees UPLOAD OPTIONS at the bottom of MESSAGE INPUT FIELD
@@ -22,7 +22,7 @@ Feature:  As a user, I should be able to send messages by clicking on Message ta
 	#
   @P7-95
 
-
+  @upload
   Scenario: User ability to add users from contact
     Then User locates To box, clears it and clicks on Add persons, groups and department
     Then From Recent Module user clicks on desired contacts
@@ -33,7 +33,7 @@ Feature:  As a user, I should be able to send messages by clicking on Message ta
     #User should be able to  attach link by clicking  on link icon
   @P7-97
 
-
+    @upload
   Scenario Outline: User's ability to attach link
     Then User locates and clicks on LINK icon
     Then User enters "<LINK TEXT>" and "<LINK URL>" and clicks save
@@ -47,7 +47,7 @@ Feature:  As a user, I should be able to send messages by clicking on Message ta
   @P7-99
 
 
-  @upload
+  @dontupload
   Scenario: Ability of user to insert videos under Messages
     Then User locates Video icon and clicks
     Then User enters video URL and waits until video is loaded and clicks Save
@@ -57,22 +57,18 @@ Feature:  As a user, I should be able to send messages by clicking on Message ta
     #User should be able to create a quote by clicking on Comma Icon
   @P7-101
 
-
-  Scenario Outline: User should be able to create a quote
+    @upload
+  Scenario: User should be able to create a quote
     When User clicks on COMMA icon
     Then User sees QUOTE INPUT inside of Message Console
     Then User enters a quote and presses SEND and sees the quote displayed
 
-    Examples:
-
-      | quote            |
-      | This is my quote |
 
 
     #User should be able to add mention  by clicking ADD mention icon and select contacts from dropdown menu
   @P7-102
 
-
+  @upload
   Scenario: User should be able to add mention
     Then User locates the Add mention icon and clicks
     Then User chooses a contact from dropdown menu
@@ -81,7 +77,7 @@ Feature:  As a user, I should be able to send messages by clicking on Message ta
     #User should be able to click on Visual Editor  and see editor text bar displays on top of the message box.
   @P7-103
 
-
+  @upload
   Scenario: User should be able to click on VISUAL EDITOR
     When User clicks on Visual Editor Icon
     Then User sees EDITOR TEXT bar on top of the messages
@@ -90,7 +86,7 @@ Feature:  As a user, I should be able to send messages by clicking on Message ta
     #User should be able to click on Topic Icon  and see Topic Message Text box displays on top of the message box
   @P7-104
 
-
+  @upload
   Scenario: User should be able to click on Topic Icon
     When User locates Topic Icon and clicks it
     Then User sees Topic Text box on top of messages
