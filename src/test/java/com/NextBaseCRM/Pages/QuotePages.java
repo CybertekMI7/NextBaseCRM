@@ -21,10 +21,10 @@ public class QuotePages extends BasePage {
     private WebElement QuoteIcon;
 
     @FindBy(xpath = "//*[@class='bxhtmled-quote']")
-    public WebElement QuoteInput;
+    private WebElement QuoteInput;
 
     @FindBy(xpath = "//button[@id='blog-submit-button-save']")
-    public WebElement SendButton;
+    private WebElement SendButton;
 
     @FindBy(className = "bx-editor-iframe")
     private WebElement iFrame;
@@ -42,8 +42,8 @@ public class QuotePages extends BasePage {
     }
 
     public void enteringSendingVisibilityQuote(){
-        String quote =faker.chuckNorris().fact();
-        //Driver.getDriver().switchTo().frame(iFrame);
+
+        String quote = faker.gameOfThrones().quote();
         QuoteInput.sendKeys(quote);
         Driver.getDriver().switchTo().defaultContent();
         actions.moveToElement(SendButton).click().perform();
