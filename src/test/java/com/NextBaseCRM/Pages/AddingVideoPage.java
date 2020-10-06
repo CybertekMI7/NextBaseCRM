@@ -2,6 +2,7 @@ package com.NextBaseCRM.Pages;
 
 import com.NextBaseCRM.utilities.Driver;
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -22,11 +23,14 @@ public class AddingVideoPage extends BasePage {
     @FindBy(xpath = "//input[@id='video_idPostFormLHE_blogPostForm-source']")
     private WebElement VideoSourceInput;
 
-    @FindBy(xpath = "//*[@class='ytp-cued-thumbnail-overlay-image']")
+    @FindBy(xpath = "//*[@id='video_idPostFormLHE_blogPostForm-title']")
     private WebElement VideoTitle;
 
     @FindBy(xpath = "//input[@value='Save']")
     private WebElement SaveButton;
+
+    @FindBy(xpath = "//*[@class='ui-btn ui-btn-lg ui-btn-primary']")
+    private WebElement SendButton;
 
     @FindBy(xpath = "//img[@title='Video']")
     private WebElement ConfirmationVideo;
@@ -42,29 +46,27 @@ public class AddingVideoPage extends BasePage {
 
     public void EnteringVideoURL(){
         wait.until(ExpectedConditions.elementToBeClickable(VideoSourceInput));
-        String URl ="https://youtu.be/hdPV6eOcRgo";
-
-        //JavascriptExecutor jse =((JavascriptExecutor)Driver.getDriver());
-       // jse.executeScript("https://youtu.be/BJ2es2vAnDQ",VideoSourceInput);
-
+        String URL ="https://youtu.be/hdPV6eOcRgo";
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
-        actions.sendKeys(VideoSourceInput,URl).build().perform();
-       // wait.until(ExpectedConditions.visibilityOf(VideoTitle));
+        VideoSourceInput.sendKeys(Keys.HOME, Keys.chord(Keys.SHIFT, Keys.END), URL);
+        //actions.sendKeys(VideoSourceInput,URl).build().perform();
         try {
-            Thread.sleep(3000);
+            Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        SaveButton.click();
+
+        wait.until(ExpectedConditions.visibilityOf(VideoTitle));
+        wait.until(ExpectedConditions.visibilityOf(SaveButton)).click();
+        wait.until(ExpectedConditions.visibilityOf(SendButton)).click();
     }
 
     public void VisibilityOfUploadedVideo(){
-        Driver.getDriver().switchTo().frame(iFrame);
         wait.until(ExpectedConditions.visibilityOf(ConfirmationVideo));
         Assert.assertTrue(ConfirmationVideo.isDisplayed());
     }
